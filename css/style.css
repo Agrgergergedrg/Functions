@@ -1,0 +1,20 @@
+body {
+  background-color: #293763;
+  height: 100vh;
+}
+body div {
+  font-size: 68px;
+  background-color: #2d4da5;
+  height: 360px;
+  width: 1202px;
+  color: #ff8742;
+  border-radius: 46px;
+}
+
+body, div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */

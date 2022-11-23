@@ -1,0 +1,14 @@
+@use 'sass:math';
+@use 'sass:meta';
+$iloraz:0;$iloczyn:0;$suma:0;$roznica:0;$m: "m";$o: "o";$d: "d";$dz: "dz";
+// @mixin rownianie($rownanie: ""){
+//     @if unitless($num1) and unitless($num2) {
+//         @each $liczba in l1i2{$rownanie}
+// }
+// W tym miejscu chciałem, aby @if wraz z @each znajdowało się tylko w tej mixinie wtedy w @function możnaby było
+// (dla dzielenia) @include dzielenie($iloraz: math.div($num1, $num2) * 1px) i to tyle
+$warunek: "unitless($num1) and unitless($num2) and type-of($num1: numeric) and type-of($num2: numeric)";$l1i2: "$num1, $num2";
+@function calculate($num1, $num2, $dz){$iloraz: 0; $dz: "dz";@if $warunek{@each $liczba in $l1i2{$iloraz: math.div($num1, $num2)*1px}} @return $iloraz;}
+@function calculate($num1,$num2, $m){$iloczyn: 0; $m: "m";@if $warunek{@each $liczba in $l1i2{$iloczyn: $num1 * $num2 * 1px;}} @return $iloczyn;}
+@function calculate($num1,$num2, $m){$roznica: 0; $o: "o";@if unitless($num1) and unitless($num2){@each $liczba in $l1i2{$roznica: calc($num1 - $num2) * 1px;}} @return $roznica;}
+@function calculate($num1,$num2, $m){$dodawanie: 0; $d: "d";@if unitless($num1) and unitless($num2) {@each $liczba in $l1i2{$dodawanie: calc($num1 + $num2) * 1px;}} @return $dodawanie;}

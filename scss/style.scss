@@ -1,0 +1,21 @@
+@use 'functions.scss' as *;
+
+body{
+    background-color: #293763;
+    height: 100vh;
+    div{
+        font-size: calculate(64, 4, m);
+        background-color: #2d4da5;
+        height: calculate(180, 180, d);
+        width: calculate(1200, 2, dz);
+        color: #ff8742;
+        border-radius: calculate(43, 3, "o");
+    
+    }
+}
+body, div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
